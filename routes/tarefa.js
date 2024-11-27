@@ -54,7 +54,7 @@ router.get('/destroy/:id', async function(req, res){
 
 //5 - exibir formulário de cadastro
 router.get('/create', async function(req, res){
-    let resultado = await tarefa.findAll()
+    let resultado = await usuario.findAll()
     if(resultado){
         console.log(resultado)
         res.render('tarefa/addTarefa', {dados:resultado})

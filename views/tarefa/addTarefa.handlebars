@@ -1,0 +1,48 @@
+<div class="text-start mt-3 p-3">
+    <h3>Cadastro de Usuários</h3>
+
+    <form action="/usuario/store" method="post">
+        <section class="mb-2">
+            {{!--Campo 1: Nome--}}
+            <div class="col-md-2">
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao" id="descricao" class="form-control">
+            </div>
+        </section>
+        
+        {{!--Campo 2: Salário e cargo--}}
+        <section class="mb-2">
+            <div class="col-md-2">
+                <label for="Setor">Setor:</label>
+                <input type="Setor" name="Setor" id="Setor" class="form-control">
+            </div>
+        </section>
+
+        {{!--Campo 3: Campo do Usuário--}}
+        <section class="mb-2 col-md-2">
+            <label for="usuario">Usuário:</label>
+            <select name="usuario" id="usuario" class="form-select">
+                <option value="">Escolha uma opção...</option>
+                {{#each dados}}
+                <option value="{{dataValues.id}}">{{dataValues.nome}}</option>
+                {{/each}}
+            </select>
+        </section>
+
+        {{!--Campo 4: Campo de Prioridade--}}
+        <section class="mb-2 col-md-2">
+            <label for="usuario">Prioridade:</label>
+            <select name="usuario" id="usuario" class="form-select">
+                <option value="">Escolha uma opção...</option>
+                <option value="1">Baixa</option>
+                <option value="2">Média</option>
+                <option value="3">Alta</option>
+            </select>
+        </section>
+
+        {{!--Campo 5: Botão de cadastrar--}}
+        <section class="mb-2 d-flex justify-content-start">
+            <button href="/tarefa/show" class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+    </form>
+</div>

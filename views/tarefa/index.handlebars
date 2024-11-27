@@ -1,0 +1,119 @@
+<div class="text-start mt-3 p-3">
+    <h3>Tarefas</h3>
+
+    <div class="row">
+        {{!--A fazer--}}
+        <section class="col-md-4">
+            <h5>A Fazer</h5>
+            {{#each dados}}
+            <div class="card w-90 mb-2">
+                <div class="card-body">
+                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Setor:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Prioridade:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <div class="row justify-content-start m-2">
+                        <a href="#" class="btn btn-warning col-md-2 m-2">Editar</a>
+                        <a href="#" class="btn btn-danger col-md-2 m-2">Excluir</a>
+                    </div>
+                    <form action="/tarefa/store">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="afazer" value="1">
+                            <label class="form-check-label" for="afazer">A Fazer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="fazendo" value="2">
+                            <label class="form-check-label" for="fazendo">Fazendo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="pronto" value="3">
+                            <label class="form-check-label" for="pronto">Pronto</label>
+                        </div>
+                        <div class="row justify-content-start m-2">
+                            <a href="#" class="btn btn-primary col-md-3 m-2">Alterar Status</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{else}}
+            <p>Nada Cadastrado.</p>
+            {{/each}} 
+        </section>
+
+        {{!--Fazendo--}}
+        <section class="col-md-4">
+            <h5>Fazendo</h5>
+            {{#each dados}}
+            <div class="card w-90 mb-2">
+                <div class="card-body">
+                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Setor:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Prioridade:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <div class="row justify-content-start m-2">
+                        <a href="#" class="btn btn-warning col-md-2 m-2">Editar</a>
+                        <a href="#" class="btn btn-danger col-md-2 m-2">Excluir</a>
+                    </div>
+                    <form action="/tarefa/store">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="afazer" value="1">
+                            <label class="form-check-label" for="afazer">A Fazer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="fazendo" value="2">
+                            <label class="form-check-label" for="fazendo">Fazendo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="pronto" value="3">
+                            <label class="form-check-label" for="pronto">Pronto</label>
+                        </div>
+                        <div class="row justify-content-start m-2">
+                            <a href="#" class="btn btn-primary col-md-3 m-2">Alterar Status</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{else}}
+            <p>Nada Cadastrado.</p>
+            {{/each}} 
+        </section>
+
+        {{!--Pronto--}}
+        <section class="col-md-4">
+            <h5>Pronto</h5>
+            {{#each dados}}
+            <div class="card w-90 mb-2">
+                <div class="card-body">
+                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Setor:</b> {{dataValues.nomeSetor}}</p>
+                    <b><p class="card-text">Prioridade:</b> {{dataValues.prioridade}}</p>
+                    <b><p class="card-text">Vinculado a:</b> {{dataValues.nome}}</p>
+                    <div class="row justify-content-start m-2">
+                        <a href="#" class="btn btn-warning col-md-2 m-2">Editar</a>
+                        <a href="#" class="btn btn-danger col-md-2 m-2">Excluir</a>
+                    </div>
+                    <form action="/tarefa/store">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="afazer" value="1">
+                            <label class="form-check-label" for="afazer">A Fazer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="fazendo" value="2">
+                            <label class="form-check-label" for="fazendo">Fazendo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="prioridade" id="pronto" value="3">
+                            <label class="form-check-label" for="pronto">Pronto</label>
+                        </div>
+                        <div class="row justify-content-start m-2">
+                            <a href="#" class="btn btn-primary col-md-3 m-2">Alterar Status</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{else}}
+            <p>Nada Cadastrado.</p>
+            {{/each}} 
+        </section>
+    </div>
+</div>

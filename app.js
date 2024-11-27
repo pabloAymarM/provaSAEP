@@ -18,7 +18,7 @@ const usuarioRouter = require('./routes/usuario')
 const tarefaRouter = require('./routes/tarefa')
 //utilizando rotas
 app.use('/usuario', usuarioRouter)
-app.use('/tarefa', usuarioRouter)
+app.use('/tarefa', tarefaRouter)
 
 //exibir informações na tela
 app.get('/', function(req, res){
