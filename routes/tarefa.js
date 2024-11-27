@@ -8,7 +8,7 @@ const { where } = require('sequelize')
 //criando rotas
 //1 - inserir dados na tabela
 router.post('/store', async function(req, res){ //o sequelize recebe o conteúdo assíncrono
-    const resultado = await usuario.create({//esperar até a função dar resultado
+    const resultado = await tarefa.create({//esperar até a função dar resultado
         nomeSetor: req.body.nomeSetor,
         descricao: req.body.descricao,
         prioridade: req.body.prioridade,
@@ -16,7 +16,7 @@ router.post('/store', async function(req, res){ //o sequelize recebe o conteúdo
         status: req.body.status,
         usuarioId: req.body.usuario
     })
-    //console.log(req.body)  
+    console.log(req.body)  
     if(resultado){
         res.redirect('/')
     }else{
@@ -31,10 +31,10 @@ router.get('/show', function(req, res){
 
 //3 - consultar Db
 router.get('/', async function(req, res){           
-    let resultado = await tarefa.findAll({include:usuario}) //o include é como o sequelize faz para realizar consultas com join
+    let resultado = await tarefa.findAll() //o include é como o sequelize faz para realizar consultas com join
     if(resultado){
         console.log(resultado)
-        res.render('tarefa/index',{dados:resultado})
+        res.render('usuario/index',{dados:resultado})
     }
     else{
         console.log('Não foi possível exibir os dados.')
@@ -45,9 +45,7 @@ router.get('/', async function(req, res){
 // :id iremos passar um valor na rota
 router.get('/destroy/:id', async function(req, res){
     const resultado = await tarefa.destroy({
-        where:{
-            id:req.params.id //recebendo o id via parâmetro que está na rota
-        }
+        where: {id:req.params.id} //recebendo o id via parâmetro que está na rota
     })
     res.redirect('/tarefa')
 })

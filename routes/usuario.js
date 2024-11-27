@@ -10,7 +10,7 @@ const { where } = require('sequelize')
 router.post('/store', async function(req, res){ //o sequelize recebe o conteúdo assíncrono
     const resultado = await usuario.create({//esperar até a função dar resultado
         nome: req.body.nome,
-        email: req.body.email,
+        email: req.body.email
     })
     //console.log(req.body)  
     if(resultado){
@@ -18,11 +18,6 @@ router.post('/store', async function(req, res){ //o sequelize recebe o conteúdo
     }else{
         res.json({erro:'Erro.'})
     }
-})
-
-//2 - exibir página raíz de usuario
-router.get('/show', function(req, res){
-    res.render('usuario/index')
 })
 
 //3 - consultar Db

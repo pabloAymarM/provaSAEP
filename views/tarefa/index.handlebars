@@ -5,16 +5,16 @@
         {{!--A fazer--}}
         <section class="col-md-4">
             <h5>A Fazer</h5>
-            {{#each dados}}
+            {{#each dados1}}
             <div class="card w-90 mb-2">
                 <div class="card-body">
                     <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
-                    <b><p class="card-text">Setor:</b> {{dataValues.descricao}}</p>
-                    <b><p class="card-text">Prioridade:</b> {{dataValues.descricao}}</p>
-                    <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
+                    <b><p class="card-text">Setor:</b> {{dataValues.nomeSetor}}</p>
+                    <b><p class="card-text">Prioridade:</b> {{dataValues.prioridade}}</p>
+                    <b><p class="card-text">Vinculado a:</b> {{usuario.dataValues.nome}}</p>
                     <div class="row justify-content-start m-2">
                         <a href="#" class="btn btn-warning col-md-2 m-2">Editar</a>
-                        <a href="#" class="btn btn-danger col-md-2 m-2">Excluir</a>
+                        <a href="/tarefa/destroy/{{dataValues.id}}" class="btn btn-danger col-md-2 m-2">Excluir</a>
                     </div>
                     <form action="/tarefa/store">
                         <div class="form-check form-check-inline">
@@ -43,7 +43,7 @@
         {{!--Fazendo--}}
         <section class="col-md-4">
             <h5>Fazendo</h5>
-            {{#each dados}}
+            
             <div class="card w-90 mb-2">
                 <div class="card-body">
                     <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
@@ -73,15 +73,14 @@
                     </form>
                 </div>
             </div>
-            {{else}}
-            <p>Nada Cadastrado.</p>
-            {{/each}} 
+            
+            
         </section>
 
         {{!--Pronto--}}
         <section class="col-md-4">
             <h5>Pronto</h5>
-            {{#each dados}}
+            
             <div class="card w-90 mb-2">
                 <div class="card-body">
                     <b><p class="card-text">Descrição:</b> {{dataValues.descricao}}</p>
@@ -111,9 +110,7 @@
                     </form>
                 </div>
             </div>
-            {{else}}
-            <p>Nada Cadastrado.</p>
-            {{/each}} 
+            
         </section>
     </div>
 </div>
